@@ -1,0 +1,73 @@
+* {
+    position: relative;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    color: #2e3440;
+    background: #eceff4;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#code {
+    width: 100%;
+    min-height: 400px;
+    margin: 20px 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#run {
+    font-size: 1.4rem;
+}
+
+#challenge {
+    font-size: 1.2rem;
+}
+
+#description {
+    font-size: 1.2rem;
+}
+
+#error {
+    font-size: 1.2rem;
+    color: #bf616a;
+}
+
+#tasks {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.task {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 0 0 10px;
+    border-radius: 6px;
+    color: #bf616a;
+    background: #e5e9f0;
+}
+
+.task.passed {
+    color: #a3be8c;
+}
+
+.task.part-passed {
+    color: #d08770;
+}
+
+.task-name {
+    font-weight: bold;
+}
