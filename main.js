@@ -8,6 +8,7 @@ const challenge = document.querySelector("#challenge");
 const editor = createEditor();
 appendTests();
 document.querySelector("#run").addEventListener("click", runCode);
+listenKey();
 
 async function runCode() {
     document.querySelector("#error").innerHTML = "";
@@ -59,4 +60,21 @@ function showResult(tasks) {
         elm.innerHTML = `<span class="task-name">${task.name}</span>`;
         document.querySelector("#tasks").appendChild(elm);
     }
+}
+
+function listenKey() {
+    let runable = true;
+    document.body.addEventListener("keydown", (e) => {
+        if (e.key === "r" && e.ctrlKey) {
+            e.preventDefault();
+            if (runable) {
+                runable = false;
+                runCode().then(() => {
+                    setTimeout(() => {
+                        runable = true;
+                    }, 500);
+                });
+            }
+        }
+    });
 }

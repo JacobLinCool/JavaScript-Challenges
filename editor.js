@@ -1,4 +1,11 @@
 import * as monaco from "monaco-editor";
+import tsWorker from "monaco-editor/esm/vs/language/typescript/ts.worker?worker";
+
+window.MonacoEnvironment = {
+    getWorker() {
+        return new tsWorker();
+    },
+};
 
 function createEditor() {
     monaco.editor.defineTheme("nord", {
@@ -287,6 +294,18 @@ function createEditor() {
         language: "javascript",
         scrollBeyondLastLine: false,
         fontSize: 14,
+        automaticLayout: true,
+        suggest: {
+            filterGraceful: true,
+            snippetsPreventQuickSuggestions: true,
+            snippetsPreventSuggestions: true,
+            filterOnType: true,
+            showIcons: true,
+            autoAccept: true,
+            autoSuggestDelay: 0,
+            triggerCharacters: [".", ":", ",", ";", " ", "\n", "\t"],
+            maxVisibleSuggestions: 5,
+        },
     });
 }
 
